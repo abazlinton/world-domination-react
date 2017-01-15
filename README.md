@@ -18,7 +18,7 @@ We created our own brief loosely based on the CodeClan suggested ones -
 
 - Multiplayer game based around the countries of the world map
 - Players should be able to conquer countries by a selecting country and guessing the population
-- When player gets closer to the the correct answer, they capture the country
+- When player gets closer to the correct answer, they capture the country
 - Game state persists and is dynamic
 - Game is continuously updated when players capture a country
 
