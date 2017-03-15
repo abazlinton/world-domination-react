@@ -10,9 +10,7 @@ This is a group project undertaken during week 13 of the 16 week [CodeClan](http
 
 **K**ate Manson (https://github.com/katemanson)
 
--
-
-###Brief / MVP
+### Brief / MVP
 
 We created our own brief loosely based on the CodeClan suggested ones -
 
