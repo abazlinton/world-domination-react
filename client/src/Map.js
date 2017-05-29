@@ -7,18 +7,21 @@ class Map extends Component {
     super(props);
   }
 
-  onComponentDidMount(){
+  componentDidMount(){
     this.googleMap = new google.maps.Map(this.refs.map, {
-      center: {lat: 0, lng: 0}
+      center: {lat: 0, lng: 0},
+      zoom: 1
     })
   }
 
   render() {
-    return(
-      <div 
-        ref="map"
-      >
 
+    return(
+      <div>
+       <div
+        id="map" ref="map"
+       >
+       </div>
       </div>
     )
   }
