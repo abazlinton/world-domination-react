@@ -1,3 +1,4 @@
+// line below shuts up ESLint
 /* global google */
 import React, {Component} from 'react';
 
