@@ -1,17 +1,21 @@
-var MapWrapper = require('./mapWrapper.js');
-var Marker = require('./marker.js');
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to React</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
+}
 
-window.onload = function() {
-
-  var worldMapDiv = document.getElementById('world-map');
-  var mapOptions = {
-    container: worldMapDiv,
-    center: {lat: 30, lng: 0},
-    zoom: 3,
-    streetViewControl: false};
-  var mapWrapper = new MapWrapper(mapOptions);
-  mapWrapper.getMarkers();
-
-
-};
+export default App;
