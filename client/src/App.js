@@ -8,25 +8,26 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {googleMapDiv: null};
+    this.getMapDiv = this.getMapDiv.bind(this);
   }
 
   componentDidMount(){
-    console.log(this.refs)
+
+  }
+
+  
+
+  getMapDiv(){
+    return this.state.googleMapDiv;
   }
 
   render() {
-
-    
-    
-    return (
-      <div className="App">
-        <div ref={(map) => {this.googleMapDiv = map}}>
-          <Map 
-            googleMap={this.googleMapDiv}
-          />
-        </div>    
-      </div>
-    );
+      return ( 
+        <Map/
+        >
+          // getMapDiv={this.getMapDiv}
+      )
   }
 }
 

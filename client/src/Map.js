@@ -3,29 +3,48 @@
 
 import Marker from './Marker';
 import React, {Component} from 'react';
+import MapDiv from './MapDiv';
 
 class Map extends Component {
 
   constructor(props) {
-    console.log(props);
     super(props);
-    this.googleMap = props.googleMap;
+    this.getMapDiv = props.getMapDiv;
+    this.state = {};
+
   }
 
-  componentDidMount(){
+  makeMap(div){
+    var testMap = new google.maps.Map(div,{
+        center: {lat:0, lng: 0},
+        zoom: 1
+    })
+    console.log(testMap);
+
+
   }
+  
 
   render() {
-    console.log('map render called')
+    // this.setStateIfFalse();
+    console.log(this.mapDiv)
+    // if (this.getMapDiv()){
+    //   console.log("hi")
+    //   var testMap = new google.maps.Map(this.getMapDiv(),{
+    //     center: {lat:0, lng: 0},
+    //     zoom: 1
+    //   })
+    //   console.log(testMap);
+    // }
+    console.log("called!");
+    // console.log(this.getMapDiv())
     return(
-      <div>
-       <Marker
-        position ={{ 
-            lat: 0, lng: 0
-          }}
-        googleMap = {this.googleMap}
-       />
-      </div>
+      <MapDiv
+        mapDivRef={(div) => {
+          
+          this.makeMap(div)
+        }}
+      />   
     )
   }
 
