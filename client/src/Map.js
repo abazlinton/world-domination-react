@@ -1,28 +1,30 @@
 // line below shuts up ESLint
 /* global google */
+
+import Marker from './Marker';
 import React, {Component} from 'react';
 
 class Map extends Component {
 
   constructor(props) {
+    console.log(props);
     super(props);
+    this.googleMap = props.googleMap;
   }
 
   componentDidMount(){
-    this.googleMap = new google.maps.Map(this.refs.map, {
-      center: {lat: 0, lng: 0},
-      zoom: 1
-    })
   }
 
   render() {
-
+    console.log('map render called')
     return(
       <div>
-       <div
-        id="map" ref="map"
-       >
-       </div>
+       <Marker
+        position ={{ 
+            lat: 0, lng: 0
+          }}
+        googleMap = {this.googleMap}
+       />
       </div>
     )
   }
