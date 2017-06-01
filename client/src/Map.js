@@ -4,6 +4,8 @@
 import Marker from './Marker';
 import React, {Component} from 'react';
 import MapDiv from './MapDiv';
+import MapStyles from './mapStyles';
+
 
 class Map extends Component {
 
@@ -11,42 +13,41 @@ class Map extends Component {
     super(props);
     this.getMapDiv = props.getMapDiv;
     this.state = {};
-
   }
 
   makeMap(div){
-    var testMap = new google.maps.Map(div,{
-        center: {lat:0, lng: 0},
-        zoom: 1
-    })
-    console.log(testMap);
-
-
+    if (!this.state.map){
+      console.log("makeMap called");
+      const map = new google.maps.Map(div,{
+          center: {lat:30, lng: 0},
+          zoom: 3,
+          styles: MapStyles
+      });
+      this.setState({
+        map: map,
+        div: div
+      });
+    return div
+    }
+    else return this.state.div;
   }
   
-
   render() {
-    // this.setStateIfFalse();
-    console.log(this.mapDiv)
-    // if (this.getMapDiv()){
-    //   console.log("hi")
-    //   var testMap = new google.maps.Map(this.getMapDiv(),{
-    //     center: {lat:0, lng: 0},
-    //     zoom: 1
-    //   })
-    //   console.log(testMap);
-    // }
-    console.log("called!");
-    // console.log(this.getMapDiv())
-    return(
-      <MapDiv
-        mapDivRef={(div) => {
-          
-          this.makeMap(div)
-        }}
-      />   
-    )
-  }
+      return (
+        <div>
+          <MapDiv
+            mapDivRef={(div) => {       
+              this.makeMap(div)
+            }}
+          /> 
+          <Marker/>
+        </div>
+
+      )
+    }
+
+
+
 
 }
 

@@ -1,5 +1,4 @@
 /* global google */
-import MapStyle from './mapStyle';
 import React, { Component } from 'react';
 import Map from './Map';
 
@@ -12,22 +11,15 @@ class App extends Component {
     this.getMapDiv = this.getMapDiv.bind(this);
   }
 
-  componentDidMount(){
-
-  }
-
-  
-
   getMapDiv(){
     return this.state.googleMapDiv;
   }
 
   render() {
-      return ( 
-        <Map/
-        >
-          // getMapDiv={this.getMapDiv}
-      )
+    return ( 
+      <Map/
+      >
+    )
   }
 }
 
